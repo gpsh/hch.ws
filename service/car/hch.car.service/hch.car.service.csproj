@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Wx.WebApi.Service" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\dba\hch.car.dba\hch.car.dba.csproj" />
+    <ProjectReference Include="..\..\..\dbs\hch.account.dbs\hch.account.dbs.csproj" />
+    <ProjectReference Include="..\..\..\dbs\hch.car.dbs\hch.car.dbs.csproj" />
+    <ProjectReference Include="..\hch.car.apis\hch.car.apis.csproj" />
+  </ItemGroup>
+
+</Project>

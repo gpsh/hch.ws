@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Wx.DbContext" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\models\hch.definition\hch.definition.csproj" />
+    <ProjectReference Include="..\..\models\hch.model\hch.model.csproj" />
+    <ProjectReference Include="..\..\service\car\hch.car.api.models\hch.car.api.models.csproj" />
+  </ItemGroup>
+
+</Project>

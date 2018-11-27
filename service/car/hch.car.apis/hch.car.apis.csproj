@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Wx.QuickWebApi.Definition" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\common\hch.global\hch.global.csproj" />
+    <ProjectReference Include="..\hch.car.api.models\hch.car.api.models.csproj" />
+  </ItemGroup>
+
+</Project>

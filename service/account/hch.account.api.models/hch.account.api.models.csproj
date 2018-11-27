@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>hch.account.api.models</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\common\hch.enumextension\hch.enumextension.csproj" />
+    <ProjectReference Include="..\..\..\models\hch.definition\hch.definition.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+
+</head>
+<body>
+    <h2> ajax</h2>
+    <div>
+        <input type="file" id="ajaxfiles" name="ajaxfiles" multiple />
+        <input type="button" id="ajaxupload" value="Uploadajax" />
+    </div>
+    <h2>form</h2>
+    <div>
+
+        <form action="/mms/files/UploadForm" method="post" enctype="multipart/form-data">
+            <input type="text" name="user_id" value="2222" />
+            <input type="file" name="formfiles" multiple />
+            <input type="submit" value="Uploadform" />
+        </form>
+    </div>
+    <h2> postajax</h2>
+    <div>
+        <input type="button" id="ajaxpost" value="postajax" />
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ajaxupload").click(function () {
+                var fileUpload = $("#ajaxfiles")[0];
+                var files = fileUpload.files;
+                var data = new FormData();
+                //var input = document.querySelector("#ajaxfiles");
+                //data.append("key", $('#ajaxfiles')[0].files[0]);
+                data.append("user_id", "100");
+                for (var i = 0; i < files.length; i++) {
+                    data.append(files[i].name, files[i]);
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:9901/file/uploadajax",
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    cache: false,
+                    dataType: "json",
+                    success: function (message) {
+                        console.log(JSON.stringify(message));
+                        alert(JSON.stringify(message));
+                    },
+                    error: function () {
+                        alert("There was error uploading files!");
+                    }
+                });
+            });
+
+            $("#ajaxpost").click(function () {
+                var datajson = {
+                    "request": {
+                        "OpenId": "o_NYet4SpeHalEjbq-eMY9OgJufY"
+                    }
+                };
+                console.log(JSON.stringify(datajson));
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:9900/queryaccount/AccountSimple",
+                    contentType: "application/json",
+                    data: JSON.stringify(datajson),
+                    dataType: "json",
+                    success: function (message) {
+                        console.log(JSON.stringify(message));
+                        alert(JSON.stringify(message));
+                    },
+                    error: function () {
+                        alert("There was error uploading files!");
+                    }
+                });
+            })
+
+
+
+
+
+
+        });
+
+        //格式化参数
+        function formatParams(data) {
+            var arr = [];
+            for (var name in data) {
+                arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
+            }
+            arr.push(("v=" + Math.random()).replace(".", ""));
+            return arr.join("&");
+        }
+
+
+    </script>
+</body>
+</html>

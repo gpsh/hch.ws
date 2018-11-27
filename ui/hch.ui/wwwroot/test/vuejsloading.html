@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /*    background-color: black;*/
+        }
+
+        .VLloading {
+            position: absolute;
+            width: 480px;
+            height: 300px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            text-align: center;
+        }
+
+        svg {
+            height: 120px;
+            width: 120px;
+            margin: 0 2em 2em;
+            overflow: visible;
+        }
+
+        circle {
+            fill: white;
+            fill-opacity: 1;
+            -webkit-animation: opacity 1.2s linear infinite;
+            animation: opacity 1.2s linear infinite;
+        }
+
+            circle:nth-child(12n + 1) {
+                -webkit-animation-delay: -0.1s;
+                animation-delay: -0.1s;
+            }
+
+            circle:nth-child(12n + 2) {
+                -webkit-animation-delay: -0.2s;
+                animation-delay: -0.2s;
+            }
+
+            circle:nth-child(12n + 3) {
+                -webkit-animation-delay: -0.3s;
+                animation-delay: -0.3s;
+            }
+
+            circle:nth-child(12n + 4) {
+                -webkit-animation-delay: -0.4s;
+                animation-delay: -0.4s;
+            }
+
+            circle:nth-child(12n + 5) {
+                -webkit-animation-delay: -0.5s;
+                animation-delay: -0.5s;
+            }
+
+            circle:nth-child(12n + 6) {
+                -webkit-animation-delay: -0.6s;
+                animation-delay: -0.6s;
+            }
+
+            circle:nth-child(12n + 7) {
+                -webkit-animation-delay: -0.7s;
+                animation-delay: -0.7s;
+            }
+
+            circle:nth-child(12n + 8) {
+                -webkit-animation-delay: -0.8s;
+                animation-delay: -0.8s;
+            }
+
+            circle:nth-child(12n + 9) {
+                -webkit-animation-delay: -0.9s;
+                animation-delay: -0.9s;
+            }
+
+            circle:nth-child(12n + 10) {
+                -webkit-animation-delay: -1s;
+                animation-delay: -1s;
+            }
+
+            circle:nth-child(12n + 11) {
+                -webkit-animation-delay: -1.1s;
+                animation-delay: -1.1s;
+            }
+
+            circle:nth-child(12n + 12) {
+                -webkit-animation-delay: -1.2s;
+                animation-delay: -1.2s;
+            }
+
+
+        @-webkit-keyframes opacity {
+            3% {
+                fill-opacity: 1;
+            }
+
+            75% {
+                fill-opacity: 0.2;
+            }
+        }
+
+        .VLloadingTransition-leave-active, .VLloadingTransition-enter-active {
+            transition: opacity 0.4s;
+        }
+
+        .VLloadingTransition-enter, .VLloadingTransition-leave-to {
+            opacity: 0.1;
+        }
+    </style>
+    <div class="app">
+        <div class="VLloadingModel">
+            <transition name="VLloadingTransition">
+                <div v-show="VueLibrary.loading.loadingShow" style="position: absolute;width: 100%;height: 100%;background-color: rgba(0,0,0,0.4);z-index:200;"></div>
+            </transition>
+           <transition name="VLloadingTransition">
+                <div class="VLloading" v-show="VueLibrary.loading.loadingShow" style="z-index:200;">
+                    <svg>
+                        <g class="g-circles">
+                            <circle transform="translate(35, 16.698) rotate(-30) translate(-35, -16.698)" cx="35" cy="16.698" r="10"></circle>
+                            <circle transform="translate(16.698, 35) rotate(-60) translate(-16.698, -35)" cx="16.698" cy="35" r="10"></circle>
+                            <circle transform="translate(10, 60) rotate(-90) translate(-10, -60) " cx="10" cy="60" r="10"></circle>
+                            <circle transform="translate(16.698, 85) rotate(-120) translate(-16.698, -85) " cx="16.698" cy="85" r="10"></circle>
+                            <circle id="8" transform="translate(35, 103.301) rotate(-150) translate(-35, -103.301) " cx="35" cy="103.301" r="10"></circle>
+                            <circle cx="60" cy="110" r="10"></circle>
+                            <circle transform="translate(85, 103.301) rotate(-30) translate(-85, -103.301) " cx="85" cy="103.301" r="10"></circle>
+                            <circle transform="translate(103.301, 85) rotate(-60) translate(-103.301, -85) " cx="103.301" cy="85" r="10"></circle>
+                            <circle transform="translate(110, 60) rotate(-90) translate(-110, -60) " cx="110" cy="60" r="10"></circle>
+                            <circle transform="translate(103.301, 35) rotate(-120) translate(-103.301, -35) " cx="103.301" cy="35" r="10"></circle>
+                            <circle transform="translate(85, 16.698) rotate(-150) translate(-85, -16.698) " cx="85" cy="16.698" r="10"></circle>
+                            <circle cx="60" cy="10" r="10"></circle>
+                        </g>
+                    </svg>
+                </div>
+            </transition>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+    <script>
+    var app = new Vue({
+        el:".app",
+        data:{
+            VueLibrary:{
+                loading:{loadingShow:false,VLloading:function(){}}
+            },
+        },
+    });
+
+    app.VueLibrary.loading.VLloading=function(){
+        app.VueLibrary.loading.loadingShow=!app.VueLibrary.loading.loadingShow;
+    }
+
+    setTimeout("app.VueLibrary.loading.VLloading();",200);
+    </script>
+</body>
+</html>

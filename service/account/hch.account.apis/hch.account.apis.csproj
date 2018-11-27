@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>hch.account.apis</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Wx.QuickWebApi.Definition" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\common\hch.global\hch.global.csproj" />
+    <ProjectReference Include="..\hch.account.api.models\hch.account.api.models.csproj" />
+  </ItemGroup>
+
+</Project>

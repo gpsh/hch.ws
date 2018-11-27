@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Wx.WebApi.Ctrl" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\hch.global\hch.global.csproj" />
+    <ProjectReference Include="..\..\common\hch.webapiservice.factory\hch.webapiservice.factory.csproj" />
+    <ProjectReference Include="..\..\models\hch.datainit\hch.datainit.csproj" />
+    <ProjectReference Include="..\account\hch.account.apis\hch.account.apis.csproj" />
+    <ProjectReference Include="..\account\hch.account.ctrl\hch.account.ctrl.csproj" />
+    <ProjectReference Include="..\account\hch.account.service\hch.account.service.csproj" />
+    <ProjectReference Include="..\car\hch.car.apis\hch.car.apis.csproj" />
+    <ProjectReference Include="..\car\hch.car.ctrl\hch.car.ctrl.csproj" />
+    <ProjectReference Include="..\car\hch.car.service\hch.car.service.csproj" />
+  </ItemGroup>
+</Project>

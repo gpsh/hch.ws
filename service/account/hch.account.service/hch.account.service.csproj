@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>hch.account.service</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Wx.WebApi.Service" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\dba\hch.account.dba\hch.account.dba.csproj" />
+    <ProjectReference Include="..\..\..\dbs\hch.account.dbs\hch.account.dbs.csproj" />
+    <ProjectReference Include="..\..\..\frame\hch.wechat.processor\hch.wechat.processor.csproj" />
+    <ProjectReference Include="..\hch.account.apis\hch.account.apis.csproj" />
+  </ItemGroup>
+
+</Project>

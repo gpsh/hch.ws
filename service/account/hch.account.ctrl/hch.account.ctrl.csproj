@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>hch.account.ctrl</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Wx.WebApi.Ctrl" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\frame\hch.frame.runtime\hch.frame.runtime.csproj" />
+    <ProjectReference Include="..\hch.account.apis\hch.account.apis.csproj" />
+  </ItemGroup>
+
+</Project>

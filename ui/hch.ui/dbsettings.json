@@ -1,0 +1,6 @@
+﻿{
+  "ConnectionStrings": {
+    "hch_dba": "Data Source=hch.dev.mysql;port=3306;Initial Catalog=hch;uid=hch.dev;password=hch.dev.group;Charset=utf8;Encrypt=True;Ssl-Mode=0",
+    "hch_dbs": "Data Source=hch.dev.mysql;port=3306;Initial Catalog=hch;uid=hch.dev;password=hch.dev.group;Charset=utf8;Encrypt=True;Ssl-Mode=0"
+  }
+}
